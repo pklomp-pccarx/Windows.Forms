@@ -1,0 +1,14 @@
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\bin\Debug\SelfSignedLicenseSample.exe
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\bin\Debug\SelfSignedLicenseSample.pdb
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\bin\Debug\PLUSManaged.dll
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\bin\Debug\PLUSManaged.xml
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\bin\Debug\PLUSManaged.XmlSerializers.dll
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\obj\Debug\SelfSignedLicenseSample_VS2015.csprojResolveAssemblyReference.cache
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\obj\Debug\com.softwarekey.Client.Sample.ManualActivationForm.resources
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\obj\Debug\com.softwarekey.Client.Sample.OnlineActivationForm.resources
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\obj\Debug\com.softwarekey.Client.Sample.MainForm.resources
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\obj\Debug\com.softwarekey.Client.Sample.Properties.Resources.resources
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\obj\Debug\com.softwarekey.Client.Sample.ProxyCredentialsForm.resources
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\obj\Debug\SelfSignedLicenseSample_VS2015.csproj.GenerateResource.Cache
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\obj\Debug\SelfSignedLicenseSample.exe
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_SelfSignedLicense\obj\Debug\SelfSignedLicenseSample.pdb

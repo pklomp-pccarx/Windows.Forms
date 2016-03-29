@@ -1,0 +1,8 @@
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_CloudContolledNetworkFloatingSOLOServer\bin\Debug\CloudControlledFloating.exe.config
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_CloudContolledNetworkFloatingSOLOServer\bin\Debug\CloudControlledFloating.exe
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_CloudContolledNetworkFloatingSOLOServer\bin\Debug\CloudControlledFloating.pdb
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_CloudContolledNetworkFloatingSOLOServer\bin\Debug\PLUSManaged.dll
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_CloudContolledNetworkFloatingSOLOServer\bin\Debug\PLUSManaged.xml
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_CloudContolledNetworkFloatingSOLOServer\bin\Debug\PLUSManaged.XmlSerializers.dll
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_CloudContolledNetworkFloatingSOLOServer\obj\Debug\CloudControlledFloating.exe
+C:\Users\Public\Documents\SoftwareKey\Protection PLUS 5\Samples\Samples-Microsoft .NET\Microsoft .NET\CSharp\Windows.Forms\PLUSManaged_CloudContolledNetworkFloatingSOLOServer\obj\Debug\CloudControlledFloating.pdb
