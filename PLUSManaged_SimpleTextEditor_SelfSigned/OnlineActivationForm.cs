@@ -5,7 +5,7 @@ using com.softwarekey.Client.Licensing;
 namespace com.softwarekey.Client.Sample
 {
     /// <summary>Form for activating a protected application online via SOLO Server.</summary>
-    public partial class OnlineActivationForm : Form
+    public partial class OnlineActivationForm : DevExpress.XtraEditors.XtraForm
     {
         #region Private Member Variables
         private MainForm m_mainDialog;
