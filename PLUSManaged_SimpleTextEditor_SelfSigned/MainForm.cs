@@ -166,6 +166,12 @@ namespace com.softwarekey.Client.Sample
         /// <param name="e">EventArgs</param>
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+
+            // this is Paul's test
+            
+
+
             string msg = "Initializing Features";
             for (int i = 0; i < 6; i++)
             {
