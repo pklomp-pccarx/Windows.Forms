@@ -1989,24 +1989,47 @@
             <param name="identifierTypes">The types of identifiers to include when calling <see cref="M:com.softwarekey.Client.Licensing.ProcessorIdentifierAlgorithm.GetIdentifiers"/>.</param>
         </member>
         <member name="M:com.softwarekey.Client.Licensing.ProcessorIdentifierAlgorithm.GetIdentifiers">
-            <summary>Generates a generic list of <see cref="T:com.softwarekey.Client.Licensing.BiosUuidIdentifier"/> objects, which should only ever contain a single entry (or no entries if the BIOS UUID could not be retrieved).</summary>
+            <summary>Generates a generic list of <see cref="T:com.softwarekey.Client.Licensing.ProcessorNameIdentifier"/>, <see cref="T:com.softwarekey.Client.Licensing.ProcessorVersionIdentifier"/>, and <see cref="T:com.softwarekey.Client.Licensing.ProcessorVendorIdentifier"/> objects (based on the <see cref="T:com.softwarekey.Client.Licensing.ProcessorIdentifierAlgorithmTypes"/> specified in the constructor).</summary>
             <remarks>
-            <para>
-            The list contains a single <see cref="T:com.softwarekey.Client.Licensing.BiosUuidIdentifier"/> object, which contains an identifier
-            based on the motherboard BIOS UUID on the computer running the application.
-            </para>
             <note type="caution">
             <para>
-            Though it is not generally a frequent occurrence, this value will change when a user changes or
-            replaces his or her motherboard.
+            Some processors may include the clock speed with the processor name.  You may set <see cref="P:com.softwarekey.Client.Licensing.ProcessorIdentifierAlgorithm.ExcludeClockSpeedFromProcessorName"/>
+            to prevent this from affecting the resulting <see cref="T:com.softwarekey.Client.Licensing.ProcessorNameIdentifier"/> objects generated.
             </para>
             </note>
+            <para>
+            The number of each type of identifier generated typically varies
+            </para>
             </remarks>
-            <returns>Returns a generic list of <see cref="T:com.softwarekey.Client.Licensing.BiosUuidIdentifier"/> objects, which should only ever contain a single entry (or no entries if the BIOS UUID could not be retrieved).</returns>
+            <returns>Returns a generic list of <see cref="T:com.softwarekey.Client.Licensing.ProcessorNameIdentifier"/>, <see cref="T:com.softwarekey.Client.Licensing.ProcessorVersionIdentifier"/>, and <see cref="T:com.softwarekey.Client.Licensing.ProcessorVendorIdentifier"/> objects (based on the <see cref="T:com.softwarekey.Client.Licensing.ProcessorIdentifierAlgorithmTypes"/> specified in the constructor).</returns>
         </member>
         <member name="M:com.softwarekey.Client.Licensing.ProcessorIdentifierAlgorithm.GetWindowsWmiIdentifiers">
-            <summary>Performs Windows Management Instrumentation (WMI) query to generate a generic list of <see cref="T:com.softwarekey.Client.Licensing.BiosUuidIdentifier"/> objects.</summary>
-            <returns>Returns a generic list of <see cref="T:com.softwarekey.Client.Licensing.BiosUuidIdentifier"/> objects.  (This list should only ever contain a single entry.)</returns>
+            <summary>Performs Windows Management Instrumentation (WMI) query to generate a generic list of <see cref="T:com.softwarekey.Client.Licensing.ProcessorNameIdentifier"/>, <see cref="T:com.softwarekey.Client.Licensing.ProcessorVersionIdentifier"/>, and <see cref="T:com.softwarekey.Client.Licensing.ProcessorVendorIdentifier"/> objects (based on the <see cref="T:com.softwarekey.Client.Licensing.ProcessorIdentifierAlgorithmTypes"/> specified in the constructor).</summary>
+            <returns>Returns a generic list of <see cref="T:com.softwarekey.Client.Licensing.ProcessorNameIdentifier"/>, <see cref="T:com.softwarekey.Client.Licensing.ProcessorVersionIdentifier"/>, and <see cref="T:com.softwarekey.Client.Licensing.ProcessorVendorIdentifier"/> objects (based on the <see cref="T:com.softwarekey.Client.Licensing.ProcessorIdentifierAlgorithmTypes"/> specified in the constructor).</returns>
+        </member>
+        <member name="P:com.softwarekey.Client.Licensing.ProcessorIdentifierAlgorithm.ExcludeClockSpeedFromProcessorName">
+            <summary>Gets or sets whether or not the clock speed should be omitted when generating <see cref="T:com.softwarekey.Client.Licensing.ProcessorNameIdentifier"/> objects. IMPORTANT: Setting this to true will require some users to reactivate.</summary>
+            <remarks>
+            <note type="caution">
+            <para>
+            Setting this property to true will change the resulting <see cref="T:com.softwarekey.Client.Licensing.ProcessorNameIdentifier"/> values generated. As a consequence,
+            computers which have already been activated and include the clock speed in the processor name will require reactivation. However,
+            it may be possible to compensate for this change using <see href="http://www.softwarekey.com/help/plus5/Content/PLUSManaged_Copy_Protection.htm">customized validation and fuzzy matching</see>.
+            </para>
+            </note>
+            <para>
+            As with any identifier algorithm that derives its value from hardware information, the processor name comes from the driver provided by the manufacturer.
+            In some/many cases (Intel processors in particular), the processor name may include the clock speed.  Some examples of processor name values with and
+            without the clock speed included by the driver is below.
+            </para>
+            <list type="bullet">
+                <item>Intel(R) Core(TM) i7-4790K CPU @ 4.00GHz</item>
+                <item>AMD FX(tm)-8120 Eight-Core Processor</item>
+            </list>
+            <note type="implementnotes">
+            <para>With virtualization software, it is possible for the clock speed to change when settings change in the hypervisor.</para>
+            </note>
+            </remarks>
         </member>
         <member name="P:com.softwarekey.Client.Licensing.ProcessorIdentifierAlgorithm.IncludeProcessorNameIdentifiers">
             <summary>Gets whether or not <see cref="T:com.softwarekey.Client.Licensing.ProcessorNameIdentifier"/> objects should be included when generating the list of identifiers.</summary>
@@ -3434,6 +3457,18 @@
         <member name="F:com.softwarekey.Client.Licensing.License.m_SerialNumber">
             <summary>The serial number assigned to the license</summary>
         </member>
+        <member name="F:com.softwarekey.Client.Licensing.License.m_ExternalReference1">
+            <summary>The external reference 1 value.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Licensing.License.m_ExternalReference1Source">
+            <summary>The source of the external reference 1 value.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Licensing.License.m_ExternalReference2">
+            <summary>The external reference 2 value.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Licensing.License.m_ExternalReference2Source">
+            <summary>The source of the external reference 2 value.</summary>
+        </member>
         <member name="M:com.softwarekey.Client.Licensing.License.#ctor(com.softwarekey.Client.Utils.AuthorEncryptionKey,System.Boolean,System.Boolean,System.Int32,System.String,System.Collections.Generic.List{com.softwarekey.Client.Licensing.SystemIdentifierAlgorithm})">
             <summary>Creates a new <see cref="T:com.softwarekey.Client.Licensing.License"/> object with the cryptographic keys already set in an <see cref="T:com.softwarekey.Client.Utils.AuthorEncryptionKey"/> object</summary>
             <param name="encryptionKey">The <see cref="T:com.softwarekey.Client.Utils.AuthorEncryptionKey"/> object required for cryptographic routines.</param>
@@ -4395,6 +4430,18 @@
         <member name="P:com.softwarekey.Client.Licensing.License.SerialNumber">
             <summary>Gets the Serial Number value</summary>
         </member>
+        <member name="P:com.softwarekey.Client.Licensing.License.ExternalReference1">
+            <summary>Gets the External Reference 1 value, which is a unique identifier generated by a third-party system or service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Licensing.License.ExternalReference1Source">
+            <summary>Gets the source of the <see cref="P:com.softwarekey.Client.Licensing.License.ExternalReference1"/> value.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Licensing.License.ExternalReference2">
+            <summary>Gets the External Reference 2 value, which is a unique identifier generated by a third-party system or service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Licensing.License.ExternalReference2Source">
+            <summary>Gets the source of the <see cref="P:com.softwarekey.Client.Licensing.License.ExternalReference2"/> value.</summary>
+        </member>
         <member name="P:com.softwarekey.Client.Licensing.License.Author">
             <summary>Gets the Author that issued this License.</summary>
         </member>
@@ -4534,6 +4581,9 @@
         </member>
         <member name="F:com.softwarekey.Client.Licensing.LicenseError.ERROR_INVALID_PRODUCTOPTIONID">
             <summary>The Product Option ID authorized in the license is invalid or not for this application.</summary>
+        </member>
+        <member name="F:com.softwarekey.Client.Licensing.LicenseError.ERROR_ENVELOPE_TYPE_INVALID">
+            <summary>The envelope is not valid or not for application use.</summary>
         </member>
         <member name="F:com.softwarekey.Client.Licensing.LicenseError.ERROR_WEBSERVICE_INVALID_CONFIGURATION">
             <summary>Error number for when an invalid web service configuration is provided.</summary>
@@ -5190,6 +5240,9 @@
         </member>
         <member name="P:com.softwarekey.Client.Licensing.SystemIdentifierValidation.CurrentIdentifiers">
             <summary>Gets or sets a generic list of the current system's <see cref="T:com.softwarekey.Client.Licensing.SystemIdentifier"/> objects</summary>
+        </member>
+        <member name="T:com.softwarekey.Client.Utils.KeyType">
+            <summary>Enum for the different types of possible keys.</summary>  
         </member>
         <member name="T:com.softwarekey.Client.Utils.AuthorEncryptionEnvelope">
             <summary>Loads and verifies author encryption envelopes.  These envelopes are typically issued by SOLO Server.</summary>
@@ -6547,7 +6600,7 @@
             <param name="useEncryptedFile">When true, uses an encrypted License File.  (Set to true if unsure.)</param>
             <param name="useWebServiceEncryption">When try, XML web service requests are encrypted.  (Set to true if unsure.)</param>
             <param name="productId">The Product ID for the Product which is being licensed from SOLO Server.  (Set to zero (0) if you are not using SOLO Server.)</param>
-            <param name="productVersion">The current version of the product (must be formatted like x.x.x.x, where each 'x' is a non-negative integer that is no longer than 5 digits).  Use an empty string to ignore the verison number.</param>
+            <param name="productVersion">The current version of the product (must be formatted like x.x.x.x, where each 'x' is a non-negative integer that is no longer than 5 digits).  Use an empty string to ignore the version number.</param>
             <param name="identifierAlgorithms">A generic list of <see cref="T:com.softwarekey.Client.Licensing.SystemIdentifierAlgorithm"/> objects (typically one object for each algorithm being used) to use to automatically initialize the <see cref="P:com.softwarekey.Client.Licensing.License.CurrentIdentifiers"/> property.</param>
         </member>
         <member name="M:com.softwarekey.Client.Licensing.WritableLicense.initializeFromXml(System.Xml.XmlDocument)">
@@ -6811,6 +6864,18 @@
         </member>
         <member name="P:com.softwarekey.Client.Licensing.WritableLicense.SerialNumber">
             <summary>Gets the Serial Number value</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Licensing.WritableLicense.ExternalReference1">
+            <summary>Gets or sets the External Reference 1 value, which is a unique identifier generated by a third-party system or service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Licensing.WritableLicense.ExternalReference1Source">
+            <summary>Gets or sets the source of the <see cref="P:com.softwarekey.Client.Licensing.WritableLicense.ExternalReference1"/> value.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Licensing.WritableLicense.ExternalReference2">
+            <summary>Gets or sets the External Reference 2 value, which is a unique identifier generated by a third-party system or service.</summary>
+        </member>
+        <member name="P:com.softwarekey.Client.Licensing.WritableLicense.ExternalReference2Source">
+            <summary>Gets or sets the source of the <see cref="P:com.softwarekey.Client.Licensing.WritableLicense.ExternalReference2"/> value.</summary>
         </member>
         <member name="T:com.softwarekey.Client.Utils.XmlHelper">
             <summary>Contains common XML manipulation routines.</summary>
@@ -9295,7 +9360,8 @@
              public bool CheckForUpdates(int licenseID)
              {
                  UpdateCheck updateChecker = new UpdateCheck();
-                 updateChecker.LicenseID = licenseID;
+                 updateChecker.LicenseID = licenseID; //Optional if the ProductID property is set.
+                 updateChecker.ProductID = 12345; //Optional if the LicenseID property is set. TODO: Remove or update this line to your ProductID assigned in SOLO Server!  
                  updateChecker.CurrentVersion = "1.2.3.4"; //TODO: Update this line to use your application's version number!
                  updateChecker.ProductUpdateName = "XYZ Product"; //TODO: Update this line of code to use the Product Update Name configured in SOLO Server!
             
@@ -9316,7 +9382,8 @@
              <code language="vbnet">
              Public Function CheckForUpdates(ByVal licenseID As Integer) As Boolean
                  Dim updateChecker As New UpdateCheck()
-                 updateChecker.LicenseID = licenseID
+                 updateChecker.LicenseID = licenseID 'Optional if the ProductID property is set.
+                 updateChecker.ProductID = 12345 'Optional if the LicenseID property is set. TODO: Remove or update this line to your ProductID assigned in SOLO Server!  
                  updateChecker.CurrentVersion = "1.2.3.4" 'TODO: Update this line to use your application's version number!
                  updateChecker.ProductUpdateName = "XYZ Product" 'TODO: Update this line of code to use the Product Update Name configured in SOLO Server!
             
